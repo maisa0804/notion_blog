@@ -10,19 +10,13 @@ export default async function Blog({ params }: { params: BlogParams }) {
 
   const article = await getPost(params.slug)
 
+  console.log(article)
+
   if (!article) {
     return <div> post is not found </div>
   }
 
   const block = await getPostBlock(article.id)
-
-  if (block) {
-    console.log("This is block-----------------------------ß")
-
-  } else {
-    console.log("couldnt find")
-  }
-
   const renderer = new NotionRenderer({
     client: notion
   })
@@ -33,7 +27,9 @@ export default async function Blog({ params }: { params: BlogParams }) {
   if (block) {
     const html = await renderer.render(...block)
     return (
-      <div dangerouslySetInnerHTML={{ __html: html }} className="pros"></div>
+      <>
+        <div dangerouslySetInnerHTML={{ __html: html }} className="pros notion"></div>
+      </>
     )
   }
 
