@@ -1,11 +1,11 @@
-import Card from "@/components/card";
-import dammy from "@/lib/dammy";
+import Introduction from "@/components/introduction";
+
 
 export default async function Home() {
 
   return (
     <div className="">
-      <Card title={dammy.title} img={dammy.img} date={dammy.date} tags={dammy.tags} />
+      <Introduction/>
     </div>
   );
 }
