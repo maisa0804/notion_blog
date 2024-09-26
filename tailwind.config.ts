@@ -7,22 +7,20 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   screens: {
-    sm: '428px',
-    md: '768px',
-    lg: '1280px',
-    xl: '1440px',
+    sm: "428px",
+    md: "768px",
+    lg: "1280px",
+    xl: "1440px",
   },
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "accent-green": '#13ce66'
+        accent: "var(--accent)",
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography")
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;
