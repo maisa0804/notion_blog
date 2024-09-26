@@ -25,7 +25,7 @@ export default function RootLayout({
         className={`antialiased pros ${roboto.className}`}
       >
         <Container>
-          <Header />
+          <Header/>
           {children}
         </Container>
       </body>
