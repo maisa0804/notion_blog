@@ -2,6 +2,7 @@ import React from "react";
 import { notion } from "../notion";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { CardProps } from "@/components/card/type";
+import cardDataCOnvertor from "../functions/cardDataConvertor";
 export const getPostsByTagName = React.cache(async (tag: string) => {
   try {
     const res = await notion.databases.query({
@@ -13,22 +14,12 @@ export const getPostsByTagName = React.cache(async (tag: string) => {
         },
       },
     });
+
     const posts = res.results as PageObjectResponse[] | undefined;
 
-    const atriclesWithTag = posts?.map((article): CardProps => {
-      const title = article.properties.Title.title[0].text.content;
-      const img = article.cover!.external.url;
-      const date = article.properties.Date.created_time;
-      const tags = article.properties.tags.multi_select.map((tag) => tag.name);
-      const slug = article.properties.slug.rich_text[0].text.content;
-
-      return {
-        title,
-        img,
-        date,
-        tags,
-        slug,
-      };
+    const atriclesWithTag = posts?.map((article): CardProps | undefined => {
+      const post = cardDataCOnvertor(article);
+      return post;
     });
 
     return atriclesWithTag;

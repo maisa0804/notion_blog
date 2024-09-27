@@ -47,17 +47,6 @@ const Card = ({ title, img, tags, date }: CardProps) => {
         </p>
       </div>
     </div>
-    // <div className='w-full h-full flex justify-center tracking-wide'>
-    //   <div className='image-container w-full !max-w-[350px] !max-h-[216px] aspect-[350/216]'>
-    //     <Image
-    //       src={img}
-    //       alt="Sample Image"
-    //       width={350}
-    //       height={216}
-    //       className='w-full h-full object-cover object-center'
-    //     />
-    //   </div>
-    // </div>
   )
 }
 

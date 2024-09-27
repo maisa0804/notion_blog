@@ -1,7 +1,7 @@
 export type CardProps = {
   title: string,
   img: string,
-  date: Date,
+  date: string,
   tags: string[],
   slug: string
 }
