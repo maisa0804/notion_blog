@@ -8,21 +8,25 @@ const Card = ({ title, img, tags, date }: CardProps) => {
 
   return (
     <div className='w-full h-full flex justify-center tracking-wide'>
-      <div className='w-full flex flex-col max-w-[350px]'>
-        <Link href="/" className='block relative group' target='_blank'>
-          <span className='top-4 right-4 absolute z-10 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto'>
-            <HiOutlineArrowSmallUp className='rotate-45' />
-          </span>
-          <div className='w-full h-full bg-background absolute rounded-lg opacity-0 group-hover:opacity-50 transition-opacity duration-400 ease-in z-[1]'></div>
-          <Image
-            src={img}
-            alt="Sample Image"
-            width={350}
-            height={216}
-            className='rounded-lg'
-            priority
-          />
-        </Link>
+      <div className='w-ful h-full flex flex-col relative max-w-[350px]'>
+        <div className='image-container relative w-full !max-w-[350px] !max-h-[216px] '>
+          <Link href="/" className='group' target='_blank'>
+            <span className='top-4 right-4 absolute z-10 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto'>
+              <HiOutlineArrowSmallUp className='rotate-45' />
+            </span>
+            <div className='w-full h-full bg-background absolute rounded-lg opacity-0 group-hover:opacity-50 transition-opacity duration-400 ease-in z-[1]'></div>
+            {
+              img &&
+              <Image
+                src={img}
+                alt="Sample Image"
+                width={350}
+                height={216}
+                className='w-full h-full object-cover object-center rounded-xl'
+              />
+            }
+          </Link>
+        </div>
         <ul className='flex justify-start items-center gap-1 my-4 w-full flex-wrap'>
           {tags.map((tag) => {
             return (
