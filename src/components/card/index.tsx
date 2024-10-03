@@ -10,7 +10,7 @@ const Card = ({ title, img, tags, date, slug }: CardProps) => {
     <div className='w-full h-full flex justify-center tracking-wide'>
       <div className='w-ful h-full flex flex-col relative max-w-[350px]'>
         <div className='image-container relative w-full !max-w-[350px] !max-h-[216px] '>
-          <Link href={`/blog/${slug}`} className='group' target='_blank'>
+          <Link href={`/blog/${slug}`} className='group'>
             <span className='top-4 right-4 absolute z-10 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto'>
               <HiOutlineArrowSmallUp className='rotate-45' />
             </span>

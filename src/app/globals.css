@@ -48,6 +48,13 @@ input {
   box-shadow: none;
 }
 
+pre>code {
+  display: block;
+  background: #030303;
+  border-radius: 0.33em;
+}
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
