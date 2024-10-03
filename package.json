@@ -13,10 +13,14 @@
     "@notion-render/client": "^0.0.2",
     "@notion-render/hljs-plugin": "^0.0.2",
     "@notionhq/client": "^2.2.15",
+    "highlight.js": "^11.10.0",
     "next": "14.2.11",
+    "notion-client": "^6.16.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.3.0"
+    "react-icons": "^5.3.0",
+    "react-notion-x": "^6.16.0",
+    "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
