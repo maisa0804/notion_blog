@@ -5,6 +5,7 @@ import { getAllPosts } from '@/lib/data/getAllPosts'
 
 const Hero = async () => {
   const allPosts = await getAllPosts()
+  console.log(allPosts)
 
   if (allPosts) {
     return (

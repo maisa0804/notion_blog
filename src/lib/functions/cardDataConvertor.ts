@@ -9,32 +9,32 @@ const cardDataCOnvertor = (data: PageObjectResponse): CardProps | undefined => {
   let tags;
   let slug;
 
-  if ("title" in data.properties.Title &&  "rich_text" in data.properties.slug) {
+  if ("title" in data.properties.Title && "rich_text" in data.properties.slug) {
     const titleType = data.properties.Title.title[0].type;
-    const slugType = data.properties.slug.rich_text[0].type
-    
-    if(
-      "external" in data.cover! &&   
-      "created_time" in data.properties.Date &&  
+    const slugType = data.properties.slug.rich_text[0].type;
+
+    if (
+      "created_time" in data.properties.Date &&
       "multi_select" in data.properties.tags &&
       titleType === "text" &&
       slugType === "text"
     ) {
+      
+      if("external" in data.cover! || 'file' in data.cover! )
 
       title = data.properties.Title.title[0].text.content;
-      img = data.cover.external.url;
+      img = data.cover?.type === 'external' ? data.cover.external.url : data.cover?.file.url;
       date = dateConvertorToLocalTime(data.properties.Date.created_time);
-      tags = data.properties.tags.multi_select.map(
-        (tag) => tag.name
-      );
+      tags = data.properties.tags.multi_select.map((tag) => tag.name);
       slug = data.properties.slug.rich_text[0].text.content;
+
       return {
         title,
         img,
         date,
         tags,
-        slug
-      }
+        slug,
+      };
     }
   }
   return undefined;
