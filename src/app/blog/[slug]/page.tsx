@@ -10,6 +10,7 @@ import Container from "@/components/containers/container";
 export default async function Blog({ params }: { params: BlogParams }) {
 
   const article = await getPost(params.slug)
+  
 
   if (article) {
     const blocks = await getPostBlock(article.id)
