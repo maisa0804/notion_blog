@@ -8,7 +8,6 @@ import NumList from '../list/NumList'
 
 const NotionSnipet = ({ blocks }: { blocks: BlockObjectResponse[] }) => {
 
-  // console.log(blocks)
 
   return <>
     {blocks && blocks.map((block: BlockObjectResponse) => {
