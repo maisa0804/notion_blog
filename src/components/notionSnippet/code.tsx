@@ -8,14 +8,20 @@ import { useEffect } from "react";
 const Code = ({ block }: SnipetProps) => {
 
   useEffect(() => {
-    document.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block as HTMLElement);
-    });
+    const codeElements = document.querySelectorAll('pre code');
+    if (codeElements) {
+      codeElements.forEach((block) => {
+        if (block instanceof HTMLElement && block.dataset.highlighted !== 'yes') {
+          hljs.highlightElement(block);
+          block.dataset.highlighted = 'yes';
+        }
+      });
+    }
   }, []);
 
   if (block.type === 'code') {
     return (
-      <div className="">
+      <div>
         <pre >
           <code>
             {block.code.rich_text[0].plain_text}
