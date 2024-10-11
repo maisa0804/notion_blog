@@ -14,7 +14,6 @@ body {
   font-family: Helvetica, 'Arial', sans-serif;
   box-sizing: border-box;
   width: 100vw;
-  overflow-x: hidden;
 }
 
 * {
@@ -47,6 +46,13 @@ input {
   outline: none;
   box-shadow: none;
 }
+
+pre>code {
+  display: block;
+  background: #030303;
+  border-radius: 0.33em;
+}
+
 
 @layer utilities {
   .text-balance {

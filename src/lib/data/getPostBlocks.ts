@@ -8,6 +8,7 @@ export const getPostBlock = React.cache(async (pageId: string) => {
     const res = await notion.blocks.children.list({
       block_id: pageId,
     });
+
     return res.results as BlockObjectResponse[];
   } catch (error) {
     console.error("Something went wrond while getting block data", error);

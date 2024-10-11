@@ -8,7 +8,7 @@ const Category = async ({ params }: { params: PageByTagParam }) => {
   const articles = await getPostsByTagName(params.tagId)
   return (
     <>
-      <div className="my-12">
+      <div className="my-12 px-10">
         <h2 className="font-bold mb-6"><span className='mr-3'>#</span>{params.tagId}</h2>
       </div>
       <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
