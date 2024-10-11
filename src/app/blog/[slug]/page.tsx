@@ -1,3 +1,5 @@
+"use strict";
+
 import LinkButton from "@/components/button/linkButton";
 import NotionSnipet from "@/components/notionSnippet";
 import { getPostBlock } from "@/lib/data/getPostBlocks";
