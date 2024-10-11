@@ -4,8 +4,11 @@ import Paragragh from './paragragh'
 import Code from './code'
 import Heading from './heading'
 import List from '../list/List'
+import NumList from '../list/NumList'
 
 const NotionSnipet = ({ blocks }: { blocks: BlockObjectResponse[] }) => {
+
+  // console.log(blocks)
 
   return <>
     {blocks && blocks.map((block: BlockObjectResponse) => {
@@ -18,6 +21,8 @@ const NotionSnipet = ({ blocks }: { blocks: BlockObjectResponse[] }) => {
         return <Heading key={block.id} block={block} />
       } else if (type === "bulleted_list_item") {
         return <List key={block.id} block={block} />
+      } else if (type === "numbered_list_item") {
+        return <NumList key={block.id} block={block} />
       }
     })}
   </>

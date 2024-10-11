@@ -13,7 +13,6 @@ const Code = ({ block }: SnipetProps) => {
     });
   }, []);
 
-
   if (block.type === 'code') {
     return (
       <div className="">
